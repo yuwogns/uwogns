@@ -31,8 +31,9 @@
             margin-right: 10px; /* 로그인 버튼 오른쪽 공백 추가 */
         }
         
+        
         .search-icon {
-            font-size: 18px; /* 아이콘 크기 조절 */
+            font-size: 30px; /* 아이콘 크기 조절 */
             margin-right: 5px; /* 아이콘 오른쪽 공백 추가 */
         }
         
@@ -54,7 +55,6 @@
         .logo-container .logo-image {
             margin-right: 10px; /* 로고 이미지 오른쪽 공백 추가 */
         }
-      
         
         .jeju-button {
             background-color: transparent !important; /* 배경색 투명하게 설정 */
@@ -69,7 +69,7 @@
         }
         
         .search-input {
-            padding: 5px;
+            padding: 1px;
             margin-right: 5px;
             background-color: white; /* 흰색 배경색 */
             border: 2px solid #FF8C00; /* 주황색 테두리 */
@@ -111,7 +111,27 @@
             cursor: pointer; /* 포인터 커서 추가 */
             margin: 5px 0; /* 버튼 간격 조정 */
         }
-        .jeju-button {
+        
+        .menu-container {
+            display: flex;
+            align-items: center;
+    display: flex;
+    align-items: center;
+    gap: 130px; /* 간격 조정 */
+}
+        .menu-button {
+            background-color: transparent !important;
+            color: #000000;
+            border: none;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+        .menu-button:hover {
+    font-weight: bold; /* 폰트 굵게 설정 */
+    font-size: 1.4em; /* 폰트 크기 키우기 */
+    color: orange;
+}
+.jeju-button {
     position: relative;
 }
 
@@ -133,19 +153,32 @@
 .jeju-button::after {
     right: -10px;
 }
+
+
+
+
     </style>
 </head>
 
 <body>
+
     <div class="hero">
         <div class="logo-container">
-            <img class="logo-image" src="제주도.jpg" alt="제주옵서예 로고">
+            <a href="index.html">
+                <img class="logo-image" src="제주도.jpg" alt="제주옵서예 로고">
+            </a>
             <div class="vertical-line"></div>
-            <button class="jeju-button">제주도</button>
+            <button class="jeju-button">제주시</button>
             <div class="city-box">
-                <button id="jeju-city">제주시</button>
-                <button id="seogwipo-city">서귀포시</button>
+                <button>제주도</button>
+                <button>서귀포시</button>
             </div>
+        </div>
+        <div class="menu-container">
+            <button class="menu-button">관광</button>
+            <button class="menu-button">음식</button>
+            <button class="menu-button">숙박</button>
+            <button class="menu-button">팁</button>
         </div>
         <div class="button-container">
             <div class="search-container">
@@ -162,20 +195,12 @@
         // JavaScript 코드 추가
         const jejuButton = document.querySelector('.jeju-button');
         const cityBox = document.querySelector('.city-box');
-        const jejuCityButton = document.querySelector('#jeju-city');
-        const seogwipoCityButton = document.querySelector('#seogwipo-city');
 
         jejuButton.addEventListener('click', function () {
             cityBox.style.display = (cityBox.style.display === 'none') ? 'flex' : 'none';
         });
-
-        jejuCityButton.addEventListener('click', function () {
-            window.location.href = 'jeju-city.html'; // 제주시 페이지로 이동
-        });
-
-        seogwipoCityButton.addEventListener('click', function () {
-            window.location.href = 'seogwipo-city.html'; // 서귀포시 페이지로 이동
-        });
     </script>
+
 </body>
+
 </html>
